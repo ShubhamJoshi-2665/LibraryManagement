@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LibraryManagement.Views.LoginPage"
+             BackgroundImageSource="https://scholarlykitchen.sspnet.org/wp-content/uploads/2017/08/iStock-493627106.jpg"
+             NavigationPage.HasNavigationBar="False"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame Padding="0" Margin="0" Background="Transparent" WidthRequest="250" HeightRequest="150">
+                <Image Source="library.png" />
+            </Frame>
+            <Label Text="Library Management" FontSize="35" HorizontalOptions="Center" Margin="0,3,0,0" TextColor="White" Padding="0" />
+            <Frame HorizontalOptions="Center" HeightRequest="300" WidthRequest="400" Background="Transparent" Margin="0,80,0,0">
+                <StackLayout VerticalOptions="Center">
+                   
+                    <StackLayout Orientation="Horizontal" >
+                        <Label Text="Username" TextColor="White" FontSize="25"  />
+                        <Entry x:Name="username" WidthRequest="190" Margin="10,0,0,0" TextColor="Black" />
+                    </StackLayout>
+                   
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Password" TextColor="White" FontSize="25" />
+                        <Entry x:Name="password" WidthRequest="190" Margin="10,0,0,0" TextColor="Black"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Select User" FontSize="23" TextColor="White"/>
+                        <Picker x:Name="module" Title="Choose" WidthRequest="150" Margin="10,0,0,0" TextColor="White" TitleColor="Black">
+                            <Picker.Items >
+                                <x:String>Admin</x:String>
+                                <x:String>User</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="0,10,0,0">
+                        <Button Text="Login" WidthRequest="120" HeightRequest="50" Clicked="Button_Clicked" CornerRadius="50" TextColor="White" FontSize="25" BackgroundColor="#3c5768" BorderColor="White"  BorderWidth="2" Margin="-35,60,0,0"/>
+                       
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

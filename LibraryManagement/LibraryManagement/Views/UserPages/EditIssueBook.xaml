@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LibraryManagement.Views.UserPages.EditIssueBook"
+                  BackgroundImageSource="https://img.freepik.com/free-photo/marble-product-backdrop-with-blank-space_53876-104163.jpg"
+             BackgroundColor="#1e7eb5">
+    <ContentPage.Content>
+                <StackLayout>
+                    <Label Text="Edit Issued Book " FontSize="40" HorizontalOptions="Center" TextColor ="white" Margin="0,50,0,0" />
+            <Frame VerticalOptions="CenterAndExpand" HeightRequest="500" WidthRequest="300" Background="Transparent">
+                <StackLayout>
+                    <Grid ColumnSpacing="50">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                      
+                            
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Orientation="Horizontal" Grid.Row="0">
+                            <Frame Grid.Column="1" Padding="0" CornerRadius="40" Background="Transparent" HorizontalOptions="CenterAndExpand" WidthRequest="130" HeightRequest="130">
+                                <Image   Source="{Binding bookImage}" Aspect="AspectFit" />
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Row="1">
+                            <Label Text="BookId" TextColor="White" VerticalTextAlignment="Center" Grid.Column="0"  HorizontalOptions="StartAndExpand" FontSize="17" />
+                            <Frame Grid.Column="1" Padding="0" CornerRadius="40" Background="Transparent">
+                                <Entry  WidthRequest="200" PlaceholderColor="White"  Text="{Binding BookId}" TextColor="White" IsReadOnly="True"/>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Row="2">
+                            <Label Text="Book Name" VerticalTextAlignment="Center" TextColor="White"  Grid.Column="0" HorizontalOptions="StartAndExpand" FontSize="17" />
+                            <Frame Grid.Column="1" Padding="0" CornerRadius="40" Background="Transparent">
+                                <Entry  WidthRequest="200" PlaceholderColor="White"  Text="{Binding BookName}" TextColor="White" IsReadOnly="True" />
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Row="3">
+                            <Label Text="Book Price" VerticalTextAlignment="Center" TextColor="White"  Grid.Column="0" HorizontalOptions="StartAndExpand" FontSize="17"/>
+                            <Frame Grid.Column="1" Padding="0" CornerRadius="40" Background="Transparent">
+                                <Entry  WidthRequest="200" PlaceholderColor="White"  Text="{Binding BookPrice}" TextColor="White" IsReadOnly="True"/>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Row="4">
+                            <Label Text="Book Genre" TextColor="White" VerticalTextAlignment="Center" Grid.Column="0" HorizontalOptions="StartAndExpand" FontSize="17"/>
+                            <Frame Grid.Column="1" Padding="0" CornerRadius="40" Background="Transparent">
+                                <Entry  WidthRequest="200" PlaceholderColor="White"  Text="{Binding BookCategory}" TextColor="White" IsReadOnly="True"/>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Row="5">
+                            <Label Text="Date of Issue" TextColor="White" VerticalTextAlignment="Center" Grid.Column="0" HorizontalOptions="Start" FontSize="17"/>
+                            <Frame Grid.Column="1" Padding="0" CornerRadius="40" Background="Transparent">
+                                <Label   TextColor="White" Text="{Binding BookIssueDate}" HorizontalOptions="Start"  FontSize="17" />
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Row="6">
+                            <Label Text="Date of Return" TextColor="White" VerticalTextAlignment="Center" Grid.Column="0" HorizontalOptions="StartAndExpand" FontSize="17"/>
+                            <Frame Grid.Column="1" Padding="0" CornerRadius="40" Background="Transparent">
+                                <DatePicker  WidthRequest="200" TextColor="White" Date="{Binding BookReturnDate}" MinimumDate="{Binding BookReturnDate}"   DateSelected="ReturnDateSelected" />
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Row="7" HorizontalOptions="Center" Margin="30">
+                            <Button Grid.Column="0"  Text="Return Book"  WidthRequest="100" BackgroundColor="Tomato" TextColor="White"  CornerRadius="10" Command="{Binding DeleteIssueBook}" CommandParameter="{Binding .}" HeightRequest="50" Padding="0"/>
+                            <Button Grid.Column="1" Text="Update Book"  WidthRequest="100" BackgroundColor="#3c5768" TextColor="White" Padding="0" CornerRadius="10"  Command="{Binding UpdateIssueBook}" CommandParameter="{Binding .}"/>
+                            </StackLayout>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    
+    </ContentPage.Content>
+</ContentPage>

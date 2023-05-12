@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<xct:Popup xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LibraryManagement.Helpers.PopupCommunitiyToolkit"
+             xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.UI.Views;assembly=Xamarin.CommunityToolkit"
+            
+           VerticalOptions="CenterAndExpand">
+    <Frame VerticalOptions="CenterAndExpand" WidthRequest="100" HorizontalOptions="CenterAndExpand" BackgroundColor="AliceBlue">
+    <StackLayout >
+        <Label Text="!!! Return Alert !!!" HorizontalOptions="Center" FontSize="26" TextColor="Red"/>
+            <Image Source="adminbg.png" HeightRequest="150" WidthRequest="150" HorizontalOptions="Center"/>
+            <Grid>
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <ScrollView>
+        <CollectionView  x:Name="demo" Margin="0" HeightRequest="400">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Horizontal">
+                    <Label Text="{Binding BookName}" TextColor="Black" FontSize="20" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start"/>
+                    <Label Text="{Binding ReturnDate}" TextColor="Black" FontSize="20" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+            </ScrollView>
+                    <Button Text="Close Alert" Clicked="Button_Clicked" BackgroundColor="Black" TextColor="White" Grid.Row="1"/>
+            </Grid>
+            
+    </StackLayout>
+    </Frame>
+</xct:Popup>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LibraryManagement.Views.UserPages.BooksList">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Books List" HorizontalOptions="CenterAndExpand" FontSize="30" Margin="20" TextColor="Black"/>
+            <ScrollView>
+                <CollectionView ItemsSource="{Binding BookList}"  BackgroundColor="Transparent" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame HorizontalOptions="Center" CornerRadius="30" BackgroundColor="Transparent" >
+                                <StackLayout Spacing="10" BackgroundColor="Transparent">
+                                    <Label Text="{Binding BookId ,StringFormat='Book Id : {0}'}" TextColor="Black" FontSize="20"/>
+                                    <Label Text="{Binding BookName,StringFormat='Book Name : {0}'}" TextColor="Black" FontSize="20"/>
+                                    <Label Text="{Binding BookPrice,StringFormat='Book Price : {0}'}" TextColor="Black" FontSize="20"/>
+                                    <Label Text="{Binding BookGenre,StringFormat='Book Category : {0}'}" TextColor="Black" FontSize="20"/>
+                                    <Label Text="{Binding BookDescription,StringFormat='Book Description : {0}'}" TextColor="Black" FontSize="20"/>
+                                    <Label Text="{Binding BookAvailable,StringFormat='Book Availablility : {0}'}" TextColor="Black" FontSize="20"/>
+                                    <Label Text="{Binding BookQuantity,StringFormat='Book Quantity : {0}'}" TextColor="Black" FontSize="20"/>
+                                    <Button Text="Issue" BackgroundColor="#3c5768" TextColor="White" Clicked="Button_Clicked" x:Name="selectbtn" CommandParameter="{Binding .}"></Button>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

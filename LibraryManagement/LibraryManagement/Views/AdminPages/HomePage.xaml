@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LibraryManagement.Views.AdminPages.HomePage"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundImageSource="https://img.freepik.com/free-photo/education-college-read-information-table_1150-1615.jpg"
+             >
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+            <Label Text="Admin Panel" HorizontalOptions="CenterAndExpand" FontSize="30" Margin="20" TextColor="White"/>
+                <Image Source="logout.png" WidthRequest="50" HeightRequest="50" Aspect="AspectFit">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Logout"></TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+            <Frame Padding="0" Margin="0" CornerRadius="30" BackgroundColor="Transparent">
+                <Image Source="adminbg.png" WidthRequest="50" HeightRequest="150" Aspect="AspectFit"/>
+            </Frame>
+            <Frame  BackgroundColor="Transparent">
+                <StackLayout Orientation="Horizontal" Spacing="10" BackgroundColor="Transparent">
+                    <Button Text="Add Record" FontSize="13" FontAttributes="Bold" BackgroundColor="#3c5768" TextColor="White" Clicked="AddRecord"/>
+                    <Button Text="Update Record" FontSize="13" FontAttributes="Bold" BackgroundColor="#3c5768" TextColor="White" Clicked="UpdateRecord"/>
+                    <Button Text="Delete Record" FontSize="13" FontAttributes="Bold" BackgroundColor="#3c5768" TextColor="White" Clicked="DeleteRecord"/>
+                </StackLayout>
+            </Frame>
+            <ScrollView>
+
+                <CollectionView ItemsSource="{Binding BookList}" SelectionMode="Single" BackgroundColor="Transparent" SelectionChanged="CollectionView_SelectionChanged">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame HorizontalOptions="Center" CornerRadius="30" BackgroundColor="Transparent" >
+                                <StackLayout Spacing="10" BackgroundColor="Transparent">
+                                    <Image Source="{Binding BookImage}" HeightRequest="200" WidthRequest="200" Aspect="AspectFit"/>
+                                    <Label Text="{Binding BookId,StringFormat='Book Id : {0}'}" TextColor="White" FontSize="20"/>
+                                    <Label Text="{Binding BookName,StringFormat='Book Name : {0}'}" TextColor="White" FontSize="20"/>
+                                    <Label Text="{Binding BookPrice,StringFormat='Book Price : {0}'}" TextColor="White" FontSize="20"/>
+                                    <Label Text="{Binding BookGenre,StringFormat='Book Category : {0}'}" TextColor="White" FontSize="20"/>
+                                    <Label Text="{Binding BookDescription,StringFormat='Book Description : {0}'}" TextColor="White" FontSize="20"/>
+                                    <Label Text="{Binding BookAvailable,StringFormat='Book Availablility : {0}'}" TextColor="White" FontSize="20"/>
+                                    <Label Text="{Binding BookQuantity,StringFormat='Book Quantity : {0}'}" TextColor="White" FontSize="20"/>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

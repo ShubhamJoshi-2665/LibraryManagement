@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LibraryManagement.Views.AdminPages.AddBook"
+          BackgroundImageSource="https://img.freepik.com/free-photo/marble-product-backdrop-with-blank-space_53876-104163.jpg"
+             BackgroundColor="#1e7eb5">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Add New Product " FontSize="40" HorizontalOptions="Center" TextColor ="white" Margin="0,50,0,0" />
+            <Frame VerticalOptions="CenterAndExpand" HeightRequest="500" WidthRequest="300" Background="Transparent">
+                <StackLayout>
+                    <Grid ColumnSpacing="50">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <StackLayout Orientation="Horizontal" Grid.Row="0">
+                            <Label Text="BookId" TextColor="Black" VerticalTextAlignment="Center" Grid.Column="0"  HorizontalOptions="StartAndExpand" FontSize="17" />
+                            <Frame Grid.Column="1" Padding="0" CornerRadius="40" Background="Transparent">
+                                <Entry  WidthRequest="200" PlaceholderColor="White"  Text="{Binding BookId}" IsEnabled="False" TextColor="White"/>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Row="1">
+                            <Label Text="Book Name" VerticalTextAlignment="Center" TextColor="Black"  Grid.Column="0" HorizontalOptions="StartAndExpand" FontSize="17" />
+                            <Frame Grid.Column="1" Padding="0" CornerRadius="40" Background="Transparent">
+                                <Entry  WidthRequest="200" PlaceholderColor="White"  Text="{Binding BookName}" TextColor="White" />
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Row="2">
+                            <Label Text="Book Price" VerticalTextAlignment="Center" TextColor="Black"  Grid.Column="0" HorizontalOptions="StartAndExpand" FontSize="17"/>
+                            <Frame Grid.Column="1" Padding="0" CornerRadius="40" Background="Transparent">
+                                <Entry  WidthRequest="200" PlaceholderColor="White"  Text="{Binding BookPrice}" TextColor="White"/>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Row="3">
+                            <Label Text="Book Genre" TextColor="Black" VerticalTextAlignment="Center" Grid.Column="0" HorizontalOptions="StartAndExpand" FontSize="17"/>
+                            <Frame Grid.Column="1" Padding="0" CornerRadius="40" Background="Transparent">
+                                <Entry  WidthRequest="200" PlaceholderColor="White"  Text="{Binding BookCategory}" TextColor="White"/>
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Row="4">
+                            <Label Text="Book Availablity" TextColor="Black" VerticalTextAlignment="Center" Grid.Column="0" HorizontalOptions="StartAndExpand" FontSize="18"/>
+                            <Label Text="{Binding Togglevalue}" TextColor="Black" VerticalTextAlignment="Center" Grid.Column="0" HorizontalOptions="StartAndExpand" FontSize="20"/>
+                            <Frame Grid.Column="1" Padding="0" CornerRadius="20" HorizontalOptions="StartAndExpand" Background="Transparent">
+                                <Switch IsToggled="{Binding BookAvailable}"    WidthRequest="50" HeightRequest="50" ThumbColor="White"  />
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Row="5">
+                            <Label Text="Book Description" TextColor="Black" VerticalTextAlignment="Center" Grid.Column="0" HorizontalOptions="StartAndExpand" FontSize="17" />
+                            <Frame Grid.Column="1" Padding="0" CornerRadius="40" Background="Transparent">
+                                <Entry Text="{Binding BookDescription}"  WidthRequest="200" PlaceholderColor="White" TextColor="White"  />
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Row="6">
+                            <Label Text="Book Quantity" TextColor="Black" VerticalTextAlignment="Center" Grid.Column="0" HorizontalOptions="StartAndExpand" FontSize="17" />
+                            <Frame Grid.Column="1" Padding="0" CornerRadius="40" Background="Transparent">
+                                <Entry Text="{Binding BookQuantity}"  WidthRequest="200" PlaceholderColor="White" TextColor="White" />
+                            </Frame>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal" Grid.Row="7">
+                            <Label Text="Image" TextColor="Black" VerticalTextAlignment="Center" Grid.Column="0" HorizontalOptions="StartAndExpand" FontSize="20"/>
+                            <Frame CornerRadius="50" Padding="0">
+                                <Image Source="{Binding ImagePath}" x:Name="ProductImageSource" WidthRequest="50" HeightRequest="50"/>
+                            </Frame>
+                            <Button Text="Select"
+                     Command="{Binding SelectImage}"/>
+                            <Button Text="Take"
+                     Command="{Binding TakeImage}"/>
+
+
+                        </StackLayout>
+                        <Button Grid.Row="8" Text="Save" HorizontalOptions="EndAndExpand" WidthRequest="200" BackgroundColor="#3c5768" TextColor="White" FontSize="20" CornerRadius="10" Margin="20" Command="{Binding SaveBook}"/>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
